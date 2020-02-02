@@ -3,17 +3,19 @@
 body { font-family: sans-serif; }
 
 .scene {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border: 1px solid #CCC;
   margin: 80px;
-  perspective: 400px;
+  perspective: 800px;
 }
 
 .cube {
   width: 200px;
   height: 200px;
   position: relative;
+  left: 50px;
+  top: 50px;
   transform-style: preserve-3d;
   transform: translateZ(-100px);
   transition: transform 1s;
@@ -53,3 +55,31 @@ body { font-family: sans-serif; }
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
 
 label { margin-right: 10px; }
+
+
+.selector--up {
+  width: 300px;
+  height: 50px;
+  position: absolute;
+  background: #CDCDCDCD;
+}
+.selector--left {
+  width: 50px;
+  height: 300px;
+  position: absolute;
+  background: #DCDCDCDC;
+}
+.selector--right {
+  width: 50px;
+  height: 300px;
+  left: 250px;
+  position: absolute;
+  background: #DCDCDCDC;
+}
+.selector--down {
+  width: 300px;
+  height: 50px;
+  top: 250px;
+  position: absolute;
+  background: #CDCDCDCD;
+}
