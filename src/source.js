@@ -118,7 +118,7 @@ var selectorDown = document.querySelector('.selector--down');
 
 function setCubeRotation({x, y, z}) {
   console.log(`atempting to rotate x:${x}, y:${y}, z:${z}`)
-  cube.style.transform = `translateZ(-100px) rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
+  cube.style.transform = `translateZ(-300px) rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
 }
 
 function handleClick(e){
@@ -154,3 +154,54 @@ selectorDown.addEventListener( 'click', () => {handleClick('down')} );
 
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
+
+function handleMouseenter(e){
+  switch(e){
+    case'up':
+      rotation.x -= 5;
+      setCubeRotation(rotation);
+      break;
+    case'left':
+      rotation.y += 5;
+      setCubeRotation(rotation);
+      break;
+    case'right':
+      rotation.y -= 5;
+      setCubeRotation(rotation);
+      break;
+    case'down':
+      rotation.x += 5;
+      setCubeRotation(rotation);
+      break;
+  }
+}
+
+function handleMouseleave(e){
+  switch(e){
+    case'up':
+      rotation.x += 5;
+      setCubeRotation(rotation);
+      break;
+    case'left':
+      rotation.y -= 5;
+      setCubeRotation(rotation);
+      break;
+    case'right':
+      rotation.y += 5;
+      setCubeRotation(rotation);
+      break;
+    case'down':
+      rotation.x -= 5;
+      setCubeRotation(rotation);
+      break;
+  }
+}
+
+selectorUp.addEventListener('mouseenter', () => {handleMouseenter('up')})
+selectorUp.addEventListener('mouseleave', () => {handleMouseleave('up')})
+selectorLeft.addEventListener('mouseenter', () => {handleMouseenter('left')})
+selectorLeft.addEventListener('mouseleave', () => {handleMouseleave('left')})
+selectorRight.addEventListener('mouseenter', () => {handleMouseenter('right')})
+selectorRight.addEventListener('mouseleave', () => {handleMouseleave('right')})
+selectorDown.addEventListener('mouseenter', () => {handleMouseenter('down')})
+selectorDown.addEventListener('mouseleave', () => {handleMouseleave('down')})
